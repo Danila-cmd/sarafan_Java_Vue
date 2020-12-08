@@ -14,10 +14,17 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("message")
 public class MessageController {
+
+    private static String URL_PATTERN = "https?:\\/\\/?[\\w\\d\\._\\-%\\/\\?=&#]+";
+    private static String IMAGE_PATTERN = "\\.(jpeg|jpg|gif|png)$";
+
+    private static Pattern URL_REGEX = Pattern.compile(URL_PATTERN, Pattern.CASE_INSENSITIVE);
+    private static Pattern IMG_REGEX = Pattern.compile(IMAGE_PATTERN, Pattern.CASE_INSENSITIVE);
 
     private final MessageRepo messageRepo;
     private final BiConsumer<EventType, Message> wsSender;
@@ -69,4 +76,7 @@ public class MessageController {
         wsSender.accept(EventType.REMOVE, message);
     }
 
+    private void fillMeta(Message message) {
+        String text = message.getText();
+    }
 }
