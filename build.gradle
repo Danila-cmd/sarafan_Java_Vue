@@ -22,6 +22,7 @@ dependencies {
 	compile('org.springframework.session:spring-session-jdbc')
 	compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.0.RELEASE')
 	compile('org.postgresql:postgresql')
+	compile 'org.jsoup:jsoup:1.11.3'
 	compile('org.projectlombok:lombok')
 	compile('javax.xml.bind:jaxb-api')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
