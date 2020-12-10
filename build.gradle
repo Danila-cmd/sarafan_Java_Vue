@@ -25,6 +25,8 @@ dependencies {
 	compile 'org.jsoup:jsoup:1.11.3'
 	compile('org.projectlombok:lombok')
 	compile('javax.xml.bind:jaxb-api')
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
