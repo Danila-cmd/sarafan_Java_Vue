@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       text: '',
-      id: ''
+      id: null
     }
   }
   ,
@@ -48,7 +48,7 @@ export default {
       }
 
       this.text = '';
-      this.id = '';
+      this.id = null;
     }
   }
 }
