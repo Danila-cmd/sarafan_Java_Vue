@@ -16,5 +16,5 @@ import java.util.List;
 public class MessagePageDto {
     private List<Message> messages;
     private int currentPage;
-    private int totalPage;
+    private int totalPages;
 }

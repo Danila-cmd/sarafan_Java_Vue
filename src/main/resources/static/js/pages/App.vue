@@ -11,9 +11,9 @@
       <v-spacer></v-spacer>
       <v-btn flat
              v-if="profile"
-             :disabled="$route.path === '/profile'"
+             :disabled="$route.path === '/user'"
              @click="showProfile">
-        {{ profile.name }}
+        {{profile.name}}
       </v-btn>
       <v-btn v-if="profile" icon href="/logout">
         <v-icon>exit_to_app</v-icon>
@@ -26,9 +26,8 @@
 </template>
 
 <script>
-import {mapState, mapMutations} from 'vuex'
-import {addHandler} from 'util/ws'
-
+import { mapState, mapMutations } from 'vuex'
+import { addHandler } from 'util/ws'
 export default {
   computed: mapState(['profile']),
   methods: {
@@ -42,7 +41,7 @@ export default {
       this.$router.push('/')
     },
     showProfile() {
-      this.$router.push('/profile')
+      this.$router.push('/user')
     }
   },
   created() {
