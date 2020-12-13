@@ -13,47 +13,39 @@
 </template>
 
 <script>
-
-import {mapActions} from 'vuex';
-import messagesApi from "../../api/messages";
-
+import { mapActions } from 'vuex'
 export default {
-  props: ['messages', 'messageAttr'],
+  props: ['messageAttr'],
   data() {
     return {
       text: '',
-      id: null
+      id: ''
     }
-  }
-  ,
+  },
   watch: {
     messageAttr(newVal, oldVal) {
-      this.text = newVal.text;
-      this.id = newVal.id;
+      this.text = newVal.text
+      this.id = newVal.id
     }
-  }
-  ,
+  },
   methods: {
     ...mapActions(['addMessageAction', 'updateMessageAction']),
     save() {
-
       const message = {
-        id: this.id, text: this.text
+        id: this.id,
+        text: this.text
       }
-
       if (this.id) {
         this.updateMessageAction(message)
       } else {
         this.addMessageAction(message)
       }
-
-      this.text = '';
-      this.id = null;
+      this.text = ''
+      this.id = ''
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>

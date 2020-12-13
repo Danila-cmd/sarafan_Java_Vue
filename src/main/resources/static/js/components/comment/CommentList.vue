@@ -1,6 +1,5 @@
 <template>
   <v-list two-line>
-
     <v-subheader>
       Comments
     </v-subheader>
@@ -16,9 +15,7 @@
       <comment-item
           :comment="item"
           :key="'item' + index"
-      >
-      </comment-item>
-
+      ></comment-item>
     </template>
 
     <comment-form :message-id="messageId"></comment-form>
@@ -27,8 +24,7 @@
 
 <script>
 import CommentForm from './CommentForm.vue'
-import CommentItem from "./CommentItem.vue";
-
+import CommentItem from './CommentItem.vue'
 export default {
   name: 'CommentList',
   components: {CommentForm, CommentItem},

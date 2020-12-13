@@ -5,16 +5,16 @@
       <v-card-title>
         <div>
           <h3>
-            <a :href="message.link">{{ message.linkTitle || message.link }}</a>
+            <a :href="message.link">{{message.linkTitle || message.link}}</a>
           </h3>
-          <div v-if="message.linkDescription">{{ message.linkDescription }}</div>
+          <div v-if="message.linkDescription">{{message.linkDescription}}</div>
         </div>
       </v-card-title>
     </v-flex>
     <v-flex v-if="type === 'image'" xs12 sm6 offset-sm3>
       <a :href="message.link">
         <v-img v-if="message.linkCover" :src="message.linkCover" aspect-ratio="2.75"></v-img>
-        {{ message.link }}
+        {{message.link}}
       </a>
     </v-flex>
     <v-flex v-if="type === 'youtube'" xs12 sm6 offset-sm3>
@@ -25,10 +25,9 @@
 
 <script>
 import YouTube from './YouTube.vue'
-
 export default {
   name: 'Media',
-  components: {YouTube},
+  components: { YouTube },
   props: ['message'],
   data() {
     return {

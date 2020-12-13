@@ -1,7 +1,6 @@
 package letscode.sarafan.service;
 
 import letscode.sarafan.domain.Comment;
-import letscode.sarafan.domain.Message;
 import letscode.sarafan.domain.User;
 import letscode.sarafan.domain.Views;
 import letscode.sarafan.dto.EventType;

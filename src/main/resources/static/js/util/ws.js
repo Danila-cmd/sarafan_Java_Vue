@@ -1,5 +1,6 @@
 import SockJS from 'sockjs-client'
-import {Stomp} from '@stomp/stompjs'
+import { Stomp } from '@stomp/stompjs'
+
 
 let stompClient = null
 const handlers = []
@@ -15,7 +16,7 @@ export function connect() {
     })
 }
 
-export function addHandler(handler){
+export function addHandler(handler) {
     handlers.push(handler)
 }
 

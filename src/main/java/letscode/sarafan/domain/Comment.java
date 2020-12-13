@@ -3,14 +3,13 @@ package letscode.sarafan.domain;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 
 @Entity
 @Table
 @Data
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = { "id" })
 public class Comment {
     @Id
     @GeneratedValue
@@ -22,12 +21,11 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "message_id")
-    @JsonView(Views.IdName.class)
+    @JsonView(Views.FullComment.class)
     private Message message;
 
     @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false, updatable = false)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
     @JsonView(Views.IdName.class)
     private User author;
-
 }
