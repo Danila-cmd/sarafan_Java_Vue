@@ -9,12 +9,23 @@
           </v-flex>
           <v-flex class="px-1">
             <v-layout column>
-              <v-flex>{{profile.name}}</v-flex>
-              <v-flex>{{profile.locale}}</v-flex>
-              <v-flex>{{profile.gender}}</v-flex>
-              <v-flex>{{profile.lastVisit}}</v-flex>
-              <v-flex>{{profile.subscriptions && profile.subscriptions.length}} subscriptions</v-flex>
-              <v-flex>{{profile.subscribers && profile.subscribers.length}} subscribers</v-flex>
+              <v-flex>{{ profile.name }}</v-flex>
+              <v-flex>{{ profile.locale }}</v-flex>
+              <v-flex>{{ profile.gender }}</v-flex>
+              <v-flex>{{ profile.lastVisit }}</v-flex>
+              <v-flex>
+                {{ profile.subscriptions && profile.subscriptions.length }} subscriptions
+              </v-flex>
+              <router-link
+                  v-if="isMyProfile"
+                  :to="`/subscriptions/${profile.id}`">
+                {{ profile.subscribers && profile.subscribers.length }} subscribers
+              </router-link>
+              <v-flex
+                  v-else
+              >
+                {{ profile.subscribers && profile.subscribers.length }} subscribers
+              </v-flex>
             </v-layout>
           </v-flex>
         </v-layout>
@@ -22,7 +33,7 @@
             v-if="!isMyProfile"
             @click="changeSubscription"
         >
-          {{isISubscribed ? 'Unsubscribe' : 'Subscribe'}}
+          {{ isISubscribed ? 'Unsubscribe' : 'Subscribe' }}
         </v-btn>
       </v-flex>
     </v-layout>
@@ -31,6 +42,7 @@
 
 <script>
 import profileApi from 'api/profile'
+
 export default {
   name: 'Profile',
   data() {

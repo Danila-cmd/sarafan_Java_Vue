@@ -26,6 +26,7 @@ dependencies {
 	compile('javax.xml.bind:jaxb-api')
 	compileOnly 'org.projectlombok:lombok:1.18.8'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+	implementation 'io.sentry:sentry-spring:1.7.30'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
