@@ -13,7 +13,7 @@
              v-if="profile"
              :disabled="$route.path === '/user'"
              @click="showProfile">
-        {{profile.name}}
+        {{ profile.name }}
       </v-btn>
       <v-btn v-if="profile" icon href="/logout">
         <v-icon>exit_to_app</v-icon>
@@ -26,8 +26,9 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 import { addHandler } from 'util/ws'
+
 export default {
   computed: mapState(['profile']),
   methods: {
